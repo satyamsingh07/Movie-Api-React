@@ -6,3 +6,6 @@
 
 # Deployed Link
 
+# Fully responsive
+
+# State Management Using Context-Api
