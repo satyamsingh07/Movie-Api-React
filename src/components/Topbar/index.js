@@ -32,17 +32,15 @@ const Img = styled.img`
 
 function TopBar() {
   const { search, setSearch } = useContext(searchContext);
-  const [text,setText] = useState("");
+ // const [text,setText] = useState("");
   const handleChange = (e) => {
-    setText(e.target.value);
+    setSearch(e.target.value);
 
     console.log(e.target.value);
     console.log(search);
   };
 
-useEffect(()=>{
-setSearch(text)
-},[text])
+
 
 
   return (
