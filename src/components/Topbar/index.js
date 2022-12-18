@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect,useState } from "react";
 import styled from "styled-components";
 import searchContext from "../../context/searchContext";
 
@@ -32,13 +32,18 @@ const Img = styled.img`
 
 function TopBar() {
   const { search, setSearch } = useContext(searchContext);
-
+  const [text,setText] = useState("");
   const handleChange = (e) => {
-    setSearch(e.target.value);
+    setText(e.target.value);
 
     console.log(e.target.value);
     console.log(search);
   };
+
+useEffect(()=>{
+setSearch(text)
+},[text])
+
 
   return (
     <Container>
