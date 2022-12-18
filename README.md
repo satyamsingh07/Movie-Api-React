@@ -4,7 +4,7 @@
 
 ## Tech-Stack - React, Styled-Components
 
-## Deployed Link
+## link- https://movie-api-react-omega.vercel.app/
 
 ## Fully responsive
 
