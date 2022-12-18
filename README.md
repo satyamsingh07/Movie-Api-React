@@ -1,11 +1,11 @@
-# Basic Movie app ui with api integrations from TMDB
+## Basic Movie app ui with api integrations from TMDB
 
-# It has live search funcationality as of now 
+## It has live search funcationality as of now 
 
-# Tech-Stack - React, Styled-Components
+## Tech-Stack - React, Styled-Components
 
-# Deployed Link
+## Deployed Link
 
-# Fully responsive
+## Fully responsive
 
-# State Management Using Context-Api
+## State Management Using Context-Api
