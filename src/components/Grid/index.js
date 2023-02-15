@@ -19,6 +19,7 @@ const Container = styled.div`
 
 function Grid() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [searchUrl, setSearchUrl] = useState(
     "https://api.themoviedb.org/3/trending/all/day?api_key=a6a16e4381486feaee7effc6cce4ee7d"
   );
@@ -47,14 +48,15 @@ function Grid() {
       }
     };
 
-    const ur = async () => {
-      const d = await link();
-      console.log(d);
-      setData(d.results);
+    link().then((data) => {
+      setData(data.results);
+      setLoading(false);
+    });
+
+    return () => {
+      clearInterval(link);
     };
-    ur();
-   
-  }, [search]);
+  }, [search, searchUrl]);
 
   return (
     <>
@@ -73,10 +75,14 @@ function Grid() {
         {data.map((data) => {
           return (
             <>
-              <Card
-                uri={`${base_url.concat(data.backdrop_path)}`}
-                heading={data.original_title}
-              />
+              {loading ? (
+                <div>loading</div>
+              ) : (
+                <Card
+                  uri={`${base_url.concat(data.backdrop_path)}`}
+                  heading={data.original_title}
+                />
+              )}
             </>
           );
         })}
